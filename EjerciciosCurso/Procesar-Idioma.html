@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div>
+      <form id="form">
+        <label>
+          <input
+            type="radio"
+            value="Spanish"
+            id="language"
+            name="input"
+            onclick="changeDelegate(this)"
+          />
+          Spanish
+        </label>
+        <label>
+          <input
+            type="radio"
+            value="English"
+            id="language"
+            name="input"
+            onclick="changeDelegate(this)"
+          />
+          English
+        </label>
+      </form>
+    </div>
+    <div>
+      <button id="btn1">Saludar</button>
+    </div>
+
+    <script>
+      /*textBox1 = document.getElementById("btn1");
+        var result;
+
+        textBox1.addEventListener("click", functionSaludo);
+
+
+        function functionSaludo() {
+            var RadialMenu = document.getElementById("language");
+
+            if (RadialMenu.value == "Spanish") {
+                alert("Hola, Usuario");
+            }
+            if (RadialMenu.valuee == "English") {
+                alert("Hello, User");
+            }
+        }*/
+
+      /*function saludaUsuario(){
+            alert("Hola,Usuario");
+            
+        }
+        function GreetUser(){
+            alert("Hello, User");
+        }
+        function changeDelegate(radioButton){
+            var boton = document.getElementById("btn1");
+            boton.removeEventListener("click",GreetUser);
+            boton.removeEventListener("click",saludaUsuario);
+            boton.addEventListener("click", radioButton.value === "English"?GreetUser:saludaUsuario);
+        }*/
+      let saludaUsuario = function () {
+        alert("Hola,Usuario");
+      };
+      let GreetUser = function () {
+        alert("Hello, User");
+      };
+
+      let eventHandler;
+
+      //Objects call an Event, but this main event will delegate the info to different events.
+      function changeDelegate(radioButton) {
+        var boton = document.getElementById("btn1");
+
+        boton.removeEventListener("click", eventHandler);
+
+        if (radioButton.value == "English") {
+          eventHandler = GreetUser;
+        } else {
+          eventHandler = saludaUsuario;
+        }
+
+        boton.addEventListener("click", eventHandler);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="text1S" value="Ciudad" />
+    <input type="text" id="text2" value="Ciudad" />
+    <input type="text" id="text3" value="Ciudad" />
+
+    <button id="btn1" disabled>Boton1</button>
+    <button id="btn2" disabled>Boton1</button>
+  </body>
+  <script>
+    let textBox1 = document.getElementById('text1');
+    let textBox2 = document.getElementById('text2');
+    let textBox3 = document.getElementById('text3');
+
+    textBox1.addEventListener('keyup', validarBotones);
+    textBox2.addEventListener('keyup', validarBotones);
+    textBox3.addEventListener('keyup', validarBotones);
+
+    var botones = document.getElementsByTagName('button');
+    // inputCiudad.addEventListener('keyup', function () {
+    //   if (inputCiudad.value.length == 0) {
+    //     for (button of botones) {
+    //       button.disabled = true;
+    //     }
+    //   } else {
+    //     for (button of botones) {
+    //       button.disabled = false;
+    //     }
+    //   }
+    // });
+
+    function validarBotones() {
+      let numeroDeCaracteres1 = textBox1.value.lenght;
+      let numeroDeCaracteres2 = textBox2.value.lenght;
+      let numeroDeCaracteres3 = textBox3.value.lenght;
+    }
+  </script>
+</html>

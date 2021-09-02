@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <button Id="btn-1">Boton 1</button>
+    <button Id="btn-2">Boton 2</button>
+    <button Id="btn-3">Boton 3</button>
+
+    <script>
+        console.log(document.children);
+        botones = document.getElementsByTagName('button');
+        console.log(botones);
+
+        botonesNones = document.getElementsByClassName('odd');
+        console.log(botonesNones);
+
+        let nuevoBoton = document.createElement('button');
+        nuevoBoton.innerHTML = 'Boton 4';
+        nuevoBoton.setAttribute('id', 'btn4');
+        let grupoBotones = document.getElementById('grupoBotones');
+
+        grupoBotones.appendChild(nuevoBoton);
+
+        for (boton of botones) {
+        boton.style.color = 'blue';
+        }
+        console.log(botones);
+
+        boton1 = document.getElementById('btn1');
+        boton1.addEventListener('click', function () {
+        alert('clicl sobre el boton1');
+        });
+    </script>
+</body>
+</html>
